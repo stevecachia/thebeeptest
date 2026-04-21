@@ -219,7 +219,7 @@ strong { font-weight: 600; }
 
 /* === HERO === */
 .hero {
-  background: #0d1117;
+  background: linear-gradient(rgba(13,17,23,0.68), rgba(13,17,23,0.72)), url('/images/hero-bg.jpg') center center / cover no-repeat;
   color: #fff;
   padding: 3.5rem 1.25rem;
   text-align: center;
