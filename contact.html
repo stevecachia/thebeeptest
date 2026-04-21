@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact thebeeptest.com</title>
+  <meta name="description" content="Get in touch with thebeeptest.com">
+  <link rel="canonical" href="https://www.thebeeptest.com/contact">
+  <meta property="og:title" content="Contact thebeeptest.com">
+  <meta property="og:description" content="Get in touch with thebeeptest.com">
+  <meta property="og:url" content="https://www.thebeeptest.com/contact">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">THE BEEP TEST</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="/calculator">Calculator</a></li>
+          <li><a href="/scores">Score Tables</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/training-guide">Training</a></li>
+          <li><a href="/standards">Standards</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ad-slot ad-slot-top">
+    <span class="ad-label">Advertisement</span>
+    <div class="ad-placeholder" data-ad-slot="ad-slot-top">Ad</div>
+  </div>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Contact</h1>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <main class="main-content">
+      <div class="article-body">
+        <p>If you have a question about the beep test that is not covered on the site, a correction to suggest, or a query about the content, use the form below.</p>
+        <p>Response times are typically within 2 to 3 working days.</p>
+        <p>For questions about specific job or sport fitness requirements, please check the Standards pages first — most common questions are answered there.</p>
+        <p><strong>Email:</strong> <a href="mailto:contact@thebeeptest.com">contact@thebeeptest.com</a></p>
+
+        <form class="contact-form" action="https://formspree.io/f/PLACEHOLDER" method="POST" id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Your question or message..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <div class="form-success" id="form-success">
+            <p>Thanks — message received. We'll be in touch within 2 to 3 working days.</p>
+          </div>
+        </form>
+      </div>
+    </main>
+    <aside class="sidebar">
+      <div class="ad-slot ad-slot-sidebar">
+        <span class="ad-label">Advertisement</span>
+        <div class="ad-placeholder" data-ad-slot="ad-slot-sidebar">Ad</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(0,0,0,0.1);padding:1.25rem;border-top:3px solid #e8b84b;">
+        <h3 style="margin-top:0;font-size:1rem;">Before You Write</h3>
+        <p style="font-size:0.88rem;color:#444;">Most common questions are already answered on the site.</p>
+        <ul style="list-style:none;font-size:0.88rem;">
+          <li style="margin-bottom:0.4rem;"><a href="/faq">FAQ</a></li>
+          <li style="margin-bottom:0.4rem;"><a href="/standards">Military &amp; Police Standards</a></li>
+          <li style="margin-bottom:0.4rem;"><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/calculator">Calculator</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand"><a href="/" class="logo">THE BEEP TEST</a><p>The complete beep test resource. Updated 2026.</p></div>
+      <div class="footer-col"><h4>Tools</h4><ul><li><a href="/calculator">Calculator</a></li><li><a href="/scores">Score Tables</a></li><li><a href="/download">Audio Download</a></li></ul></div>
+      <div class="footer-col"><h4>Guides</h4><ul><li><a href="/how-it-works">How It Works</a></li><li><a href="/training-guide">Training Guide</a></li><li><a href="/pacing-strategy">Pacing Strategy</a></li><li><a href="/turn-technique">Turn Technique</a></li><li><a href="/5k-myth">The 5K Myth</a></li></ul></div>
+      <div class="footer-col"><h4>More</h4><ul><li><a href="/standards">Standards</a></li><li><a href="/faq">FAQ</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 thebeeptest.com</span><div><a href="/privacy">Privacy Policy</a> &nbsp;&middot;&nbsp; <a href="/contact">Contact</a></div></div>
+  </footer>
+
+  <script>
+    document.querySelector('.nav-toggle').addEventListener('click',function(){document.getElementById('main-nav').classList.toggle('open');});
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = this;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(response) {
+        if (response.ok) {
+          form.reset();
+          document.getElementById('form-success').style.display = 'block';
+        }
+      }).catch(function() {
+        document.getElementById('form-success').style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

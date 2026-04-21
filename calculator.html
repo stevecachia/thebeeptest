@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beep Test Calculator 2026 — VO2 Max, Fitness Rating &amp; Score</title>
+  <meta name="description" content="Free beep test calculator. Enter your level and shuttles to get your VO2 max estimate, fitness rating and age group comparison. Updated 2026.">
+  <link rel="canonical" href="https://www.thebeeptest.com/calculator">
+  <meta property="og:title" content="Beep Test Calculator 2026 — VO2 Max, Fitness Rating &amp; Score">
+  <meta property="og:description" content="Free beep test calculator. Enter your level and shuttles to get your VO2 max estimate, fitness rating and age group comparison. Updated 2026.">
+  <meta property="og:url" content="https://www.thebeeptest.com/calculator">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">THE BEEP TEST</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+      <nav class="main-nav" id="main-nav">
+        <ul>
+          <li><a href="/calculator" class="active">Calculator</a></li>
+          <li><a href="/scores">Score Tables</a></li>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/training-guide">Training</a></li>
+          <li><a href="/standards">Standards</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="ad-slot ad-slot-top">
+    <span class="ad-label">Advertisement</span>
+    <div class="ad-placeholder" data-ad-slot="ad-slot-top">Ad</div>
+  </div>
+
+  <div class="page-header">
+    <div class="container">
+      <h1>Beep Test Calculator</h1>
+      <p>Enter your result below. Get your VO2 max estimate, fitness rating and age group comparison instantly.</p>
+    </div>
+  </div>
+
+  <div class="page-wrap">
+    <main class="main-content">
+      <div class="article-body">
+
+        <p>Enter your result below. The calculator uses the Léger 1988 formula — the same one used by sports scientists and fitness professionals worldwide — to estimate your VO2 max. It then compares your score against published norms for your age group and gender and gives you a fitness rating.</p>
+        <p>You need four things: the level you reached, the number of shuttles you completed at that level, your age and your gender. That's it.</p>
+
+        <div class="calc-card">
+          <h2 style="border:none;margin-top:0;">Your Result</h2>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="level">Level Reached</label>
+              <select id="level">
+                <option value="">Select level</option>
+                <option value="1">Level 1</option>
+                <option value="2">Level 2</option>
+                <option value="3">Level 3</option>
+                <option value="4">Level 4</option>
+                <option value="5">Level 5</option>
+                <option value="6">Level 6</option>
+                <option value="7">Level 7</option>
+                <option value="8">Level 8</option>
+                <option value="9">Level 9</option>
+                <option value="10">Level 10</option>
+                <option value="11">Level 11</option>
+                <option value="12">Level 12</option>
+                <option value="13">Level 13</option>
+                <option value="14">Level 14</option>
+                <option value="15">Level 15</option>
+                <option value="16">Level 16</option>
+                <option value="17">Level 17</option>
+                <option value="18">Level 18</option>
+                <option value="19">Level 19</option>
+                <option value="20">Level 20</option>
+                <option value="21">Level 21</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="shuttle">Shuttles at That Level</label>
+              <select id="shuttle" disabled>
+                <option value="">Select level first</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="number" id="age" min="10" max="70" placeholder="e.g. 32">
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select id="gender">
+                <option value="">Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="results-panel" id="results-panel">
+            <div class="result-grid">
+              <div class="result-item">
+                <div class="result-label">VO2 Max (ml/kg/min)</div>
+                <div class="result-value" id="r-vo2">—</div>
+              </div>
+              <div class="result-item">
+                <div class="result-label">Fitness Rating</div>
+                <div class="result-value small" id="r-rating">—</div>
+              </div>
+              <div class="result-item">
+                <div class="result-label">Exit Speed</div>
+                <div class="result-value" id="r-speed">—</div>
+              </div>
+              <div class="result-item">
+                <div class="result-label">Total Shuttles</div>
+                <div class="result-value" id="r-shuttles">—</div>
+              </div>
+              <div class="result-item">
+                <div class="result-label">Total Distance</div>
+                <div class="result-value" id="r-distance">—</div>
+              </div>
+              <div class="result-item">
+                <div class="result-label">Score</div>
+                <div class="result-value" id="r-score">—</div>
+              </div>
+            </div>
+
+            <div style="margin-top:1rem;">
+              <div style="font-family:'Oswald',sans-serif;font-size:0.82rem;text-transform:uppercase;letter-spacing:0.06em;color:#8b949e;margin-bottom:0.5rem;">Your Score vs Age Group Norms</div>
+              <div class="table-wrap">
+                <table class="norm-table-mini" id="norm-table">
+                  <thead><tr>
+                    <th>Rating</th><th>VP</th><th>Poor</th><th>Fair</th><th>Average</th><th>Good</th><th>Very Good</th><th>Excellent</th>
+                  </tr></thead>
+                  <tbody id="norm-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="what-next" id="what-next">
+              <p id="what-next-text"></p>
+              <div class="what-next-links" id="what-next-links"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ad-slot ad-slot-inline" style="margin:1.5rem 0;">
+          <span class="ad-label">Advertisement</span>
+          <div class="ad-placeholder" data-ad-slot="ad-slot-inline-1">Ad</div>
+        </div>
+
+        <h2>How the Score Is Calculated</h2>
+        <p>The calculator uses the formula developed by Luc Léger and colleagues in 1988, published in the Journal of Sports Science. It is the most widely validated formula for converting beep test results into a VO2 max estimate.</p>
+        <p>The formula takes the running speed at your final completed level as its main input. Speed at each level is calculated as 8 plus 0.5 multiplied by the level number, in kilometres per hour. So level 10 corresponds to a speed of 13 km/h.</p>
+        <p>For adults, the formula keeps age constant at 18, as the original research found the relationship between speed and VO2 max remains consistent for adults beyond this point. For younger participants, actual age is used.</p>
+        <p>VO2 max estimates from the beep test are exactly that — estimates. They correlate well with laboratory measurements but individual factors like running economy and familiarity with the test format will affect the result.</p>
+
+        <h2>Score Tables</h2>
+        <p>The full norms tables for all age groups and both genders are on the Score Tables page. Your result above is compared against the relevant bracket for your age and gender automatically.</p>
+        <p><a href="/scores" class="btn btn-secondary">View Full Score Tables</a></p>
+
+      </div>
+    </main>
+
+    <aside class="sidebar">
+      <div class="ad-slot ad-slot-sidebar">
+        <span class="ad-label">Advertisement</span>
+        <div class="ad-placeholder" data-ad-slot="ad-slot-sidebar">Ad</div>
+      </div>
+      <div style="background:#fff;border:1px solid rgba(0,0,0,0.1);padding:1.25rem;border-top:3px solid #e8b84b;margin-bottom:1.25rem;">
+        <h3 style="margin-top:0;font-size:1rem;">Quick Links</h3>
+        <ul style="list-style:none;font-size:0.9rem;">
+          <li style="margin-bottom:0.4rem;"><a href="/scores">Full Score Tables</a></li>
+          <li style="margin-bottom:0.4rem;"><a href="/training-guide">Training Guide</a></li>
+          <li style="margin-bottom:0.4rem;"><a href="/pacing-strategy">Pacing Strategy</a></li>
+          <li style="margin-bottom:0.4rem;"><a href="/turn-technique">Turn Technique</a></li>
+          <li style="margin-bottom:0.4rem;"><a href="/standards">Military &amp; Police Standards</a></li>
+          <li style="margin-bottom:0.4rem;"><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/download">Free Audio Download</a></li>
+        </ul>
+      </div>
+      <div class="ad-slot ad-slot-sidebar" style="display:block;">
+        <span class="ad-label">Advertisement</span>
+        <div class="ad-placeholder" data-ad-slot="ad-slot-sidebar-2" style="min-height:600px;">Ad</div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo">THE BEEP TEST</a>
+        <p>The complete beep test resource. Calculator, score tables, training guides and official standards. Updated 2026.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Tools</h4>
+        <ul>
+          <li><a href="/calculator">Calculator</a></li>
+          <li><a href="/scores">Score Tables</a></li>
+          <li><a href="/download">Audio Download</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="/how-it-works">How It Works</a></li>
+          <li><a href="/training-guide">Training Guide</a></li>
+          <li><a href="/pacing-strategy">Pacing Strategy</a></li>
+          <li><a href="/turn-technique">Turn Technique</a></li>
+          <li><a href="/5k-myth">The 5K Myth</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Standards</h4>
+        <ul>
+          <li><a href="/standards">All Standards</a></li>
+          <li><a href="/standards/uk-police">UK Police</a></li>
+          <li><a href="/standards/british-army">British Army</a></li>
+          <li><a href="/standards/australian-adf">Australian ADF</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 thebeeptest.com</span>
+      <div>
+        <a href="/privacy">Privacy Policy</a>
+        &nbsp;&middot;&nbsp;
+        <a href="/contact">Contact</a>
+        &nbsp;&middot;&nbsp;
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Shuttles per level (index 0 = level 1)
+    const SHUTTLES = [7,8,8,9,9,10,10,11,11,11,12,12,13,13,13,14,14,15,15,16,16];
+
+    // Cumulative shuttles before each level (index 0 = before level 1 = 0)
+    const CUM_BEFORE = [0,7,15,23,32,41,51,61,72,83,94,106,118,131,144,157,171,185,200,215,231];
+
+    function cumScore(level, shuttle) {
+      return CUM_BEFORE[level - 1] + shuttle;
+    }
+
+    // Norms: [vpMax, poorMax, fairMax, avgMax, goodMax, vgMax]
+    // score <= vpMax = VP, <= poorMax = Poor, ... > vgMax = Excellent
+    const NORMS = {
+      male: {
+        '12-13':  [17, 33, 45, 56, 69, 92],
+        '14-15':  [29, 42, 55, 70, 80, 108],
+        '16-17':  [32, 49, 63, 81, 97, 125],
+        '18-25':  [33, 52, 66, 84, 99, 128],
+        '26-35':  [33, 46, 60, 70, 89, 115],
+        '36-45':  [22, 35, 45, 58, 70, 97],
+        '46-55':  [20, 29, 37, 47, 58, 77],
+        '56-65':  [13, 21, 31, 38, 49, 65],
+        '65+':    [8,  12, 22, 31, 42, 53]
+      },
+      female: {
+        '12-13':  [12, 20, 33, 42, 55, 75],
+        '14-15':  [17, 34, 45, 56, 68, 90],
+        '16-17':  [24, 38, 52, 65, 79, 104],
+        '18-25':  [27, 39, 53, 67, 84, 113],
+        '26-35':  [22, 34, 46, 58, 76, 99],
+        '36-45':  [13, 22, 35, 43, 55, 77],
+        '46-55':  [11, 20, 27, 35, 43, 62],
+        '56-65':  [8,  13, 20, 27, 38, 53],
+        '65+':    [4,  8,  13, 19, 26, 39]
+      }
+    };
+
+    const RATING_LABELS = ['Very Poor', 'Poor', 'Fair', 'Average', 'Good', 'Very Good', 'Excellent'];
+    const RATING_KEYS   = ['rating-vp','rating-p','rating-f','rating-a','rating-g','rating-vg','rating-ex'];
+
+    function getAgeGroup(age) {
+      if (age <= 13) return '12-13';
+      if (age <= 15) return '14-15';
+      if (age <= 17) return '16-17';
+      if (age <= 25) return '18-25';
+      if (age <= 35) return '26-35';
+      if (age <= 45) return '36-45';
+      if (age <= 55) return '46-55';
+      if (age <= 65) return '56-65';
+      return '65+';
+    }
+
+    function getRating(score, thresholds) {
+      for (let i = 0; i < thresholds.length; i++) {
+        if (score <= thresholds[i]) return i;
+      }
+      return 6; // Excellent
+    }
+
+    // Norm range strings for display
+    const NORM_RANGES = {
+      male: {
+        '12-13':  ['Below 3/3','3/3–5/1','5/2–6/4','6/5–7/5','7/6–8/8','8/9–10/9','Above 10/9'],
+        '14-15':  ['Below 4/7','4/7–6/1','6/2–7/4','7/5–8/9','8/10–9/8','9/9–12/2','Above 12/2'],
+        '16-17':  ['Below 5/1','5/1–6/8','6/9–8/2','8/3–9/9','9/10–11/3','11/4–13/7','Above 13/7'],
+        '18-25':  ['Below 5/2','5/2–7/1','7/2–8/5','8/6–10/1','10/2–11/5','11/6–13/10','Above 13/10'],
+        '26-35':  ['Below 5/2','5/2–6/5','6/6–7/9','7/10–8/9','8/10–10/6','10/7–12/9','Above 12/9'],
+        '36-45':  ['Below 3/8','3/8–5/3','5/4–6/4','6/5–7/7','7/8–8/9','8/10–11/3','Above 11/3'],
+        '46-55':  ['Below 3/6','3/6–4/6','4/7–5/5','5/6–6/6','6/7–7/7','7/8–9/5','Above 9/5'],
+        '56-65':  ['Below 2/7','2/7–3/6','3/7–4/8','4/9–5/6','5/7–6/8','6/9–8/4','Above 8/4'],
+        '65+':    ['Below 2/2','2/2–2/5','2/6–3/7','3/8–4/8','4/9–6/1','6/2–7/2','Above 7/2']
+      },
+      female: {
+        '12-13':  ['Below 2/6','2/6–3/5','3/6–5/1','5/2–6/1','6/2–7/4','7/5–9/3','Above 9/3'],
+        '14-15':  ['Below 3/3','3/3–5/2','5/3–6/4','6/5–7/5','7/6–8/7','8/8–10/7','Above 10/7'],
+        '16-17':  ['Below 4/2','4/2–5/6','5/7–7/1','7/2–8/4','8/5–9/7','9/8–11/10','Above 11/10'],
+        '18-25':  ['Below 4/5','4/5–5/7','5/8–7/2','7/3–8/6','8/7–10/1','10/2–12/7','Above 12/7'],
+        '26-35':  ['Below 3/8','3/8–5/2','5/3–6/5','6/6–7/7','7/8–9/4','9/5–11/5','Above 11/5'],
+        '36-45':  ['Below 2/7','2/7–3/7','3/8–5/3','5/4–6/2','6/3–7/4','7/5–9/5','Above 9/5'],
+        '46-55':  ['Below 2/5','2/5–3/5','3/6–4/4','4/5–5/3','5/4–6/2','6/3–8/1','Above 8/1'],
+        '56-65':  ['Below 2/2','2/2–2/6','2/7–3/5','3/6–4/4','4/5–5/6','5/7–7/2','Above 7/2'],
+        '65+':    ['Below 1/5','1/5–2/1','2/2–2/6','2/7–3/4','3/5–4/3','4/4–5/7','Above 5/7']
+      }
+    };
+
+    // Populate shuttle dropdown based on level
+    document.getElementById('level').addEventListener('change', function() {
+      const lvl = parseInt(this.value);
+      const shuttleSelect = document.getElementById('shuttle');
+      shuttleSelect.innerHTML = '';
+      if (!lvl) {
+        shuttleSelect.innerHTML = '<option value="">Select level first</option>';
+        shuttleSelect.disabled = true;
+        return;
+      }
+      shuttleSelect.disabled = false;
+      const max = SHUTTLES[lvl - 1];
+      for (let i = 1; i <= max; i++) {
+        const opt = document.createElement('option');
+        opt.value = i;
+        opt.textContent = i + (i === max ? ' (full level)' : '');
+        shuttleSelect.appendChild(opt);
+      }
+      calculate();
+    });
+
+    ['shuttle','age','gender'].forEach(id => {
+      document.getElementById(id).addEventListener('change', calculate);
+    });
+    document.getElementById('age').addEventListener('input', calculate);
+
+    function calculate() {
+      const level = parseInt(document.getElementById('level').value);
+      const shuttle = parseInt(document.getElementById('shuttle').value);
+      const age = parseInt(document.getElementById('age').value);
+      const gender = document.getElementById('gender').value;
+
+      if (!level || !shuttle || !age || !gender || age < 10 || age > 70) {
+        document.getElementById('results-panel').classList.remove('visible');
+        return;
+      }
+
+      const speed = 8 + level * 0.5;
+      const ageForFormula = age > 18 ? 18 : age;
+      const vo2 = 31.025 + (3.238 * speed) - (3.248 * ageForFormula) + (0.1536 * ageForFormula * speed);
+      const totalShuttles = cumScore(level, shuttle);
+      const totalDistance = totalShuttles * 20;
+      const ageGroup = getAgeGroup(age);
+      const thresholds = NORMS[gender][ageGroup];
+      const ratingIdx = getRating(totalShuttles, thresholds);
+
+      document.getElementById('r-vo2').textContent = vo2.toFixed(1);
+      const ratingEl = document.getElementById('r-rating');
+      ratingEl.textContent = RATING_LABELS[ratingIdx];
+      ratingEl.className = 'result-value small ' + RATING_KEYS[ratingIdx];
+      document.getElementById('r-speed').textContent = speed.toFixed(1) + ' km/h';
+      document.getElementById('r-shuttles').textContent = totalShuttles;
+      document.getElementById('r-distance').textContent = (totalDistance / 1000).toFixed(2) + ' km';
+      document.getElementById('r-score').textContent = level + '/' + shuttle;
+
+      // Norm table
+      const ranges = NORM_RANGES[gender][ageGroup];
+      const tbody = document.getElementById('norm-table-body');
+      tbody.innerHTML = '';
+      const tr = document.createElement('tr');
+      if (ratingIdx === 0 || (ratingIdx > 0)) tr.classList.add('current-row');
+      for (let i = 0; i < 7; i++) {
+        const td = document.createElement('td');
+        td.textContent = ranges[i];
+        if (i === ratingIdx) {
+          td.style.background = 'rgba(232,184,75,0.25)';
+          td.style.fontWeight = '600';
+          td.style.color = '#e8b84b';
+        }
+        tr.appendChild(td);
+      }
+      // First cell = "Your score"
+      const scoreTd = document.createElement('td');
+      scoreTd.textContent = 'Your score: ' + level + '/' + shuttle;
+      scoreTd.style.color = '#8b949e';
+      scoreTd.style.fontFamily = "'Source Sans 3', sans-serif";
+      scoreTd.style.fontSize = '0.78rem';
+      // Replace the row with labels + highlighted
+      tbody.innerHTML = '';
+      const labelRow = document.createElement('tr');
+      RATING_LABELS.forEach((label, i) => {
+        const td = document.createElement('td');
+        td.textContent = ranges[i];
+        td.style.fontSize = '0.75rem';
+        if (i === ratingIdx) {
+          td.style.background = 'rgba(232,184,75,0.2)';
+          td.style.fontWeight = '700';
+          td.style.color = '#e8b84b';
+        }
+        labelRow.appendChild(td);
+      });
+      tbody.appendChild(labelRow);
+
+      // What Next panel
+      const whatNextText = document.getElementById('what-next-text');
+      const whatNextLinks = document.getElementById('what-next-links');
+      whatNextLinks.innerHTML = '';
+      let text = '';
+      let links = [];
+
+      if (ratingIdx <= 1) {
+        text = 'Your score is below average for your age group. The good news is this is exactly the kind of fitness that responds quickly to the right training. Start with the Training Guide.';
+        links = [['Training Guide', '/training-guide'], ['Pacing Strategy', '/pacing-strategy']];
+      } else if (ratingIdx <= 3) {
+        text = 'A solid base. With focused training you can push into the Good or Very Good bracket within 6 weeks. Here\'s where to start.';
+        links = [['Training Guide', '/training-guide'], ['Turn Technique', '/turn-technique']];
+      } else if (ratingIdx === 4) {
+        text = 'Good fitness. To push higher from here you need to train at and above your current maximum level. Generic running won\'t cut it.';
+        links = [['Training Guide', '/training-guide'], ['The 5K Myth', '/5k-myth']];
+      } else if (ratingIdx === 5) {
+        text = 'Excellent score for your age group. Check how you compare against sport specific and military benchmarks.';
+        links = [['Standards', '/standards'], ['Blog', '/blog']];
+      } else {
+        text = 'Excellent score for your age group. Check how you compare against sport specific and military benchmarks.';
+        links = [['Standards', '/standards'], ['World Record', '/blog/beep-test-world-record']];
+      }
+
+      whatNextText.textContent = text;
+      links.forEach(([label, href]) => {
+        const a = document.createElement('a');
+        a.href = href;
+        a.textContent = label;
+        whatNextLinks.appendChild(a);
+      });
+
+      document.getElementById('results-panel').classList.add('visible');
+    }
+
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      document.getElementById('main-nav').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>
